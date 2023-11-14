@@ -5,8 +5,14 @@ const state = {
         tileLeft: document.querySelector("#time-left"),
         score: document.querySelector("#score")
     },
-    Values: {},
+    Values: {
+        timerId: null
+    },
 };
+
+function moveEnemy() {
+    state.Values.timerId = setInterval(randomSquare)
+}
 
 function randomSquare() {
     state.view.squares.forEach((square)=>{
